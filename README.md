@@ -1,5 +1,5 @@
-# TypeGod
-Practice typing and improve your typing speed (WPM).
+# TypeGod -- practice typing and improve your typing speed (WPM).
+TypeGod is a text-based, CLI program for practicing your typing skills, and also measuring and improving your typing speed.
 
 # Installation
 It's easy as fuck.
