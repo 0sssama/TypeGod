@@ -1,6 +1,6 @@
 texts = [
     
-    "Living men are bound by time... Thus, their lives have an urgency. This gives them ambition. Makes them choose those things that are most important, cling more tightly to that which they hold dear. Their lives have seasons, and rites of passage, and consequences. And ultimately, an end. But what of a lifewith no urgency? What then of ambition? What then of love?",
+    "Living men are bound by time... Thus, their lives have an urgency. This gives them ambition. Makes them choose those things that are most important, cling more tightly to that which they hold dear. Their lives have seasons, and rites of passage, and consequences. And ultimately, an end. But what of a life with no urgency? What then of ambition? What then of love?",
     "Usefulness, whatever form it may take, is the price we should pay for the air we breathe and the food we eat and the privilege of being alive.",
     "Success must include two things: the development of an individual to his utmost potentiality and a contribution of some kind to one's world.",
     "But the human tongue is a beast that few can master. It strains constantly to break out of its cage, and if it is not tamed, it will run wild and cause you grief. Power cannot accrue to those who squander their treasure of words.",
