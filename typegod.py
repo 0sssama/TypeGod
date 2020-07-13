@@ -52,21 +52,6 @@ def timer():
             s = 0
             m += 1
 
-
-def refresh():
-    while not finished:
-        time.sleep(1)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        score_info = open("SCORE")
-        highscore = score_info.read()+' WPM'
-        seconds = '0'+str(s) if s<10 else str(s)
-        minutes = '0'+str(m) if m<10 else str(m)
-        print ("WPM: {};\nHIGHEST WPM: {};\nTIME:{}:{};\n\n".format('undefined', highscore, minutes, seconds))
-        paragraphInterface = ''.join(paragraphLetters)
-        print (paragraphInterface + '\n')
-        print (' >', userWord+'|')
-        
-
 run()
 time.sleep(0.5)
 print (color("\n      =======>", colors.RED), color("practice typing fast and", colors.GREEN), color("<=======\n", colors.RED))
@@ -129,7 +114,7 @@ if start.strip().lower() == 'go':
                 finished = True
                 exit()
             else:
-                if highestWPM > float(highscore):
+                if highestWPM > highscore:
                     print ('NEW HIGH SCORE! -- saved.\n ')
                     open('SCORE', 'w').close()
                     infoedit = open('SCORE', 'w')
@@ -162,7 +147,6 @@ if start.strip().lower() == 'go':
                 paragraphLetters = colorize(paragraphLetters, crntLetterIndex)
                 crntWordIndex += 1
                 crntLetterIndex += 1
-                lettersTyped += 1
                 userWord = ''
             else:
                 userWord = userWord + ' ' 
