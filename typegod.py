@@ -149,10 +149,10 @@ if start.strip().lower() == 'go':
                 crntLetterIndex += 1
                 userWord = ''
             else:
-                userWord = userWord + ' ' 
+                userWord = userWord + ' '
                 lastLetterIsWrong = True
                 nOfWrongLetters += 1
-        
+
 
         elif keyPressed == key.BACKSPACE:
             if userWord == '':
@@ -182,7 +182,6 @@ if start.strip().lower() == 'go':
                             pass
                         else:
                             crntLetterIndex -= 1
-        
 
         elif keyPressed == key.CTRL_C:
             finished  = True
@@ -190,4 +189,3 @@ if start.strip().lower() == 'go':
         else:
             pass
         os.system('cls' if os.name == 'nt' else 'clear')
-        
