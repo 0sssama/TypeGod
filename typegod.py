@@ -118,7 +118,7 @@ if start.strip().lower() == 'go':
                     print ('NEW HIGH SCORE! -- saved.\n ')
                     open('SCORE', 'w').close()
                     infoedit = open('SCORE', 'w')
-                    infoedit.write(str(highestWPM))
+                    infoedit.write(str("{:.2f}".format(highestWPM)))
                     infoedit.close()
                 finished = True
                 exit()
