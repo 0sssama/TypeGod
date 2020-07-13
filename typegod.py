@@ -10,8 +10,7 @@
 
 import os, time, random, sys
 from info import texts
-from colorit import *
-from pynput import keyboard
+from ColorIt import *
 from readchar import readkey, key
 import threading
 
