@@ -99,7 +99,7 @@ if start.strip().lower() == 'go':
         paragraphInterface = ''.join(paragraphLetters)
         print (paragraphInterface + '\n')
         print (' >', userWord+'|')
-        print ("\n\n  PRESS 'CTRL+C+' TO QUIT")
+        print ("\n\n  PRESS 'CTRL+C' TO QUIT")
         if crntLetterIndex == len(paragraphOriginal):
             print ('\n' + color('YOU WON!', colors.GREEN))
             print('\n Time elapsed: {}:{};'.format(minutes, seconds))
