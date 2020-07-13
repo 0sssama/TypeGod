@@ -43,6 +43,6 @@ a stupid question can take youto some pretty interesting places.
  > |
 
 
-  PRESS 'CTRL+C+' TO QUIT
+  PRESS 'CTRL+C' TO QUIT
 
 ```
