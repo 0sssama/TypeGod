@@ -15,7 +15,6 @@ from readchar import readkey, key
 import threading
 
 os.system('cls' if os.name == 'nt' else 'clear')
-initColorIt()
 
 def run():
     print ( color ( " _____  __   __  ____    _____    ____    ___    ____  " , colors.RED ))
@@ -26,10 +25,10 @@ def run():
 
 def countdown(secs):
     while secs!=0:
-        print (' >',secs)
+        print ('\n >',secs)
         time.sleep(1)
         secs-=1
-        print ("\033[A                             \033[A")
+        os.system('cls' if os.name == 'nt' else 'clear')
 
 def colorize(letters, index):
     letters[index] = background(color(letters[index], (0,0,0) ), colors.WHITE)
