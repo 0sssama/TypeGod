@@ -75,16 +75,16 @@ if start.strip().lower() == 'go':
     highestWPM = 0
     timer_thread = threading.Thread(target = timer)
     timer_thread.start()
+    score_info = open("SCORE")
+    highscore = score_info.read()
+    if highscore.strip() == '':
+        highscore = '0'
+    try:
+        highscore = float(highscore)
+    except:
+        highscore = '0'
+    score_info.close()
     while not finished:
-        score_info = open("SCORE")
-        highscore = score_info.read()
-        if highscore.strip() == '':
-            highscore = '0'
-        try:
-            highscore = float(highscore)
-        except:
-            highscore = '0'
-        score_info.close()
         seconds = '0'+str(s) if s<10 else str(s)
         minutes = '0'+str(m) if m<10 else str(m)
         secondsInMins = int(int(s) * (10/6))
