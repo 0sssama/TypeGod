@@ -7,12 +7,16 @@
 
 
 
-
-import os, time, random, sys
-from info import texts
-from ColorIt import *
-from readchar import readkey, key
-import threading
+try:
+    import os, time, random, sys, threading
+    from info import words
+    from ColorIt import *
+    from readchar import readkey, key
+    from string import ascii_lowercase as asciiLetters
+except:
+    print('one or more required modules are not installed. please run this command:')
+    print('     [pip install -r requirements.txt]\n')
+    exit()
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -22,6 +26,12 @@ def run():
     print ( color ( "  | |    \ V /  | |_) | |  _|   | |  _  | | | | | | | |" , colors.RED ))
     print ( color ( "  | |     | |   |  __/  | |___  | |_| | | |_| | | |_| |" , colors.RED ))
     print ( color ( "  |_|     |_|   |_|     |_____|  \____|  \___/  |____/ " , colors.RED ))
+
+def newParagraph():
+    paragraph = []
+    for i in range(random.randint(50,60)):
+        paragraph.append(random.choice(words))
+    return " ".join(paragraph)
 
 def countdown(secs):
     while secs!=0:
@@ -59,9 +69,8 @@ time.sleep(0.7)
 print ("\n  Are you ready ? (type 'go' to start)")
 start = input('>>>> ')
 if start.strip().lower() == 'go':
-    asciiLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890éçè-()=+'\"&.:,;!?/[]}{#@"
     os.system('cls' if os.name == 'nt' else 'clear')
-    paragraphOriginal = texts[random.randint(0,(len(texts)-1))]
+    paragraphOriginal = newParagraph()
     paragraphLetters = list(paragraphOriginal)
     userWord = ''
     paragraphWords = paragraphOriginal.split(' ')
@@ -86,18 +95,12 @@ if start.strip().lower() == 'go':
     while not finished:
         seconds = '0'+str(s) if s<10 else str(s)
         minutes = '0'+str(m) if m<10 else str(m)
-        secondsInMins = int(int(s) * (10/6))
-        if s == 0:
-            if m == 0:
-                wordPerMinute = 0
-            else:
-                timeInMinute = float(m)
-                wordPerMinute = lettersTyped / (5*timeInMinute)
-        else:
-            timeInMinute = float(str(m)+'.'+str(secondsInMins))
-            wordPerMinute = lettersTyped / (5*timeInMinute)
-        if wordPerMinute > highestWPM:
-            highestWPM = wordPerMinute
+        secondsPassed = s + m *60
+        if s == 0: 
+            wordPerMinute = 0
+        else: 
+            wordPerMinute = lettersTyped * (60/secondsPassed) / 5
+        if wordPerMinute > highestWPM: highestWPM = wordPerMinute
         print ("WPM: {:.2f};\nHIGHEST WPM SCORE: {};\nTIME: {}:{};\n\n".format(wordPerMinute, str(highscore)+' WPM', minutes, seconds))
         paragraphInterface = ''.join(paragraphLetters)
         print (paragraphInterface + '\n')
@@ -148,6 +151,7 @@ if start.strip().lower() == 'go':
         elif keyPressed == key.SPACE:
             if userWord == paragraphWords[crntWordIndex]:
                 paragraphLetters = colorize(paragraphLetters, crntLetterIndex)
+                lettersTyped += 1
                 crntWordIndex += 1
                 crntLetterIndex += 1
                 userWord = ''
@@ -189,6 +193,4 @@ if start.strip().lower() == 'go':
         elif keyPressed == key.CTRL_C:
             finished  = True
             exit()
-        else:
-            pass
         os.system('cls' if os.name == 'nt' else 'clear')
